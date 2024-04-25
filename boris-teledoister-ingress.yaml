@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: teledoist-ingress
+  name: boris-teledoister-ingress
   annotations:
     cert-manager.io/cluster-issuer: lets-encrypt
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
@@ -22,13 +22,13 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: teledoist-api-service
+                name: boris-teledoister-bot-service
                 port:
                   number: 80
           - path: /(.*)
             pathType: Prefix
             backend:
               service:
-                name: teledoist-blog-service
+                name: boris-teledoister-blog-service
                 port:
                   number: 80

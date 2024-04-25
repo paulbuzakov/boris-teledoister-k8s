@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: teledoist-blog-deployment
+  name: boris-teledoister-blog-deployment
   labels:
-    app: teledoist-blog
+    app: boris-teledoister-blog
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: teledoist-blog
+      app: boris-teledoister-blog
   template:
     metadata:
       labels:
-        app: teledoist-blog
+        app: boris-teledoister-blog
     spec:
       containers:
-        - name: teledoist-blog
-          image: paulbuzakov/teledoist-blog:latest
+        - name: boris-teledoister-blog
+          image: paulbuzakov/boris-teledoister-blog:latest
           ports:
             - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: teledoist-blog-service
+  name: boris-teledoister-blog-service
 spec:
   selector:
-    app: teledoist-blog
+    app: boris-teledoister-blog
   ports:
     - protocol: TCP
       port: 80
