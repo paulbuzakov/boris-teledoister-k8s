@@ -25,10 +25,3 @@ spec:
                 name: boris-teledoister-bot-service
                 port:
                   number: 80
-          - path: /(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: boris-teledoister-blog-service
-                port:
-                  number: 80
